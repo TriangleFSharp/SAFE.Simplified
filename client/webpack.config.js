@@ -139,6 +139,7 @@ module.exports = {
     // - babel-loader: transforms JS to old syntax (compatible with old browsers)
     // - sass-loaders: transforms SASS/SCSS into JS
     // - file-loader: Moves files referenced in the code (fonts, images) into output folder
+    // - postcss-loader: enables tailwind magic
     module: {
         rules: [
             {
@@ -168,7 +169,8 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: { implementation: require("sass") }
-                    }
+                    },
+                    'postcss-loader'
                 ],
             },
             {

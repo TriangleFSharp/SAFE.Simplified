@@ -1,14 +1,19 @@
-# Simplified SAFE Stack
+# Simplified SAFE Stack + Tailwind
 
-A lightweight alternative template to the full-fledged official [SAFE Template](https://github.com/SAFE-Stack/SAFE-template). Lowers the entry barrier by choosing the simplest possible opinionated defaults:
+Start with the [SAFE.Simple](https://github.com/Zaid-Ajaj/SAFE.Simplified) template and applies the instructions from [this Composition ID blog](https://www.compositional-it.com/news-blog/tailwind-css-with-safe/) to enable tailwind.
+
+List of Choices in this template:
+
  - Nuget for package management
  - [FAKE](https://fake.build/) build script as a console project (see ./build)
  - [Saturn](https://github.com/SaturnFramework/Saturn) as server web framework
  - [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting) for client-server communications
  - [Feliz](https://github.com/Zaid-Ajaj/Feliz) as the React DSL on the front-end
+ - [Tailwind](https://tailwindcss.com/) for styling
  - [Expecto](https://github.com/haf/expecto) for server unit-tests project
  - [Fable.Mocha](https://github.com/Zaid-Ajaj/Fable.Mocha) for client unit-tests project (runs in Node.js when on CI servers or live during development)
  - [Serilog](https://serilog.net) for logging server-side stuff
+ - [Yarn](https://yarnpkg.com/) for client side package management
  - Scalable architecture by modelling logical server-side components following Fable.Remoting protocols
  - F# Analyzers support
  - Simple application variable configuration (see below sections)
@@ -31,13 +36,9 @@ To work with and develop the application, you need to both the server and the cl
   Shell tab c:\project\simplified-safe   Shell tab c:\project\simplified-safe
  -------------------------------------- --------------------------------------
   > cd server                            > cd client
-  > dotnet restore                       > npm install
-  > dotnet run                           > npm start
+  > dotnet restore                       > yarn
+  > dotnet run                           > yarn start
 ```
-As shown here below
-
-![img](docs/running-the-application.gif)
-
 The server web application starts listening for requests at `http://localhost:5000` where as the client application will be hosted at `http://localhost:8080` during developments. All web requests made from the front-end are automatically proxied to the backend at `http://localhost:5000`. In production, there will no proxy because the front-end application will be served from the backend itself.
 
 > That is unless you are hosting the backend serverless and would like to host the front-end project separately.

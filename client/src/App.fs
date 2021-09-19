@@ -79,7 +79,8 @@ let render (state: State) (dispatch: Msg -> unit) =
             Html.h1 "Full-Stack Counter"
 
             Html.button [
-                prop.style [ style.margin 5; style.padding 15 ]
+                prop.className "bg-blue-500 h-10 w-20 rounded text-gray-50"
+                prop.style [ style.margin 5; style.padding 15; ]
                 prop.onClick (fun _ -> dispatch Increment)
                 prop.text "Increment"
             ]

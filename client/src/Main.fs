@@ -3,6 +3,7 @@ module Main
 open Fable.Core.JsInterop
 
 importAll "./styles/main.scss"
+importAll "./styles/tailwind.css"
 
 open Elmish
 open Elmish.React
